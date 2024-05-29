@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogfight Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container"></div>
+
+    <script>
+        function loadAndRunPythonCode() {
+            fetch('source/main.py')
+                .then(response => response.text())
+                .then(pythonCode => {
+                    // Execute o código Python aqui
+                    console.log('Código Python:', pythonCode);
+                    // Aqui você pode usar uma biblioteca como Brython para executar o código Python no navegador
+                })
+                .catch(error => console.error('Erro ao carregar o código Python:', error));
+        }
+
+        // Chame a função quando a página carregar
+        window.onload = loadAndRunPythonCode;
+    </script>
+</body>
+</html>
